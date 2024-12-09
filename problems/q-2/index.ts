@@ -34,9 +34,9 @@ const hasNicePairs = (arr: Array<number>) =>
     e.runSync,
   );
 
-export const adventW1Q2 = Effect.all([FileSystem, Path.Path]).pipe(
+export const adventD2 = Effect.all([FileSystem, Path.Path]).pipe(
   e.andThen(([fs, path]) =>
-    fs.readFileString(path.join(process.cwd(), "/week-1/q-2", "file.txt")),
+    fs.readFileString(path.join(process.cwd(), "/problems/q-2", "file.txt")),
   ),
   e.map(String.trim),
   e.map(String.split("\n")),
@@ -45,5 +45,5 @@ export const adventW1Q2 = Effect.all([FileSystem, Path.Path]).pipe(
   e.map(Array.filter(isIncreasingOrDecreasing)),
   e.map(Array.filter(hasNicePairs)),
   e.map(Array.length),
-  e.map((data) => console.log(`Week One Question Two: ${data}`)),
+  e.map((data) => console.log(`Advent Day 2:: The result is: ${data}`)),
 );
